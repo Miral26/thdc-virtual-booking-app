@@ -45,5 +45,6 @@ module.exports = {
   lintOnSave: false,
   pluginOptions: {},
 
-  transpileDependencies: ["vue-echarts", "resize-detector"]
+  transpileDependencies: ["vue-echarts", "resize-detector"],
+  runtimeCompiler: true
 };
