@@ -165,7 +165,7 @@ export const echartBar = {
         35000,
         40050,
       ],
-      label: {show: false, color: "#A855F7"},
+      label: {show: false, color: "#6cdcd4"},
       type: "bar",
       color: "#A78BFA",
       smooth: true,
@@ -298,7 +298,7 @@ export const basicLine = {
       type: "line",
       showSymbol: true,
       smooth: true,
-      color: "#A855F7",
+      color: "#6cdcd4",
       lineStyle: {
         opacity: 1,
         width: 2,
@@ -1708,7 +1708,7 @@ export const solidArea = {
     ],
     axisLabel: {
       show: true,
-      color: "#A855F7",
+      color: "#6cdcd4",
       interval: 5,
       inside: false,
       align: "center",
@@ -1783,17 +1783,17 @@ export const solidArea = {
       smooth: true,
       showSymbol: false,
       itemStyle: {
-        borderColor: "#A855F7",
-        color: ["#A855F7"],
+        borderColor: "#6cdcd4",
+        color: ["#6cdcd4"],
       },
       lineStyle: {
         opacity: 1,
         width: 1,
-        color: ["#A855F7"],
+        color: ["#6cdcd4"],
       },
       areaStyle: {
         opacity: 1,
-        color: ["#A855F7"],
+        color: ["#6cdcd4"],
       },
     },
   ],
@@ -1879,7 +1879,7 @@ export const stackedPie = {
     bottom: "3%",
     containLabel: true,
   },
-  color: ["#A855F7", "#63845", "#ebcb37", "#a1b968", "#0d94bc", "#135bba"],
+  color: ["#6cdcd4", "#63845", "#ebcb37", "#a1b968", "#0d94bc", "#135bba"],
 
   tooltip: {
     trigger: "item",
@@ -1944,7 +1944,7 @@ export const stackedPie = {
       },
       itemStyle: {
         normal: {
-          color: "#A855F7",
+          color: "#6cdcd4",
           shadowBlur: 200,
           shadowColor: "rgba(0, 0, 0, 0.0)",
         },

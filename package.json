@@ -16,6 +16,11 @@
   },
   "dependencies": {
     "@johmun/vue-tags-input": "^2.1.0",
+    "@syncfusion/ej2-vue-buttons": "^19.1.63",
+    "@syncfusion/ej2-vue-calendars": "^19.1.64",
+    "@syncfusion/ej2-vue-dropdowns": "^19.1.64",
+    "@syncfusion/ej2-vue-inputs": "^19.1.63",
+    "@syncfusion/ej2-vue-schedule": "^19.1.59",
     "apexcharts": "^3.23.1",
     "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
@@ -70,7 +75,7 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.12",
-    "@vue/cli-plugin-eslint": "^4.5.13",
+    "@vue/cli-plugin-eslint": "^4.5.10",
     "@vue/cli-service": "^4.5.10",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",

@@ -15,7 +15,7 @@
           <vue-slider
             v-model="value"
             :tooltip="'none'"
-            :process-style="{ backgroundColor: '#A855F7' }"
+            :process-style="{ backgroundColor: '#6cdcd4' }"
             :tooltip-style="{ backgroundColor: 'pink', borderColor: 'pink' }"
           >
             <template v-slot:dot="{ value, focus }">
@@ -29,7 +29,7 @@
                     <div>
                         <div class=" mb-30">
                             <vue-slider v-model="value_2"
-                                :process-style="{ backgroundColor: '#A855F7' }">
+                                :process-style="{ backgroundColor: '#6cdcd4' }">
 
                             </vue-slider>
                         </div>
@@ -69,7 +69,7 @@ export default {
   left: -5px !important;
   top: -5px !important;
   border-radius: 50%;
-  border: 5px solid #a855f7;
+  border: 5px solid #6cdcd4;
   box-shadow: none;
   cursor: pointer;
   background: #fff;

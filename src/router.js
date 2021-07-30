@@ -2,39 +2,106 @@ import Vue from "vue";
 import store from "./store";
 // import {isMobile} from "mobile-device-detect";
 import Router from "vue-router";
-import NProgress from "nprogress";
 import authenticate from "./auth/authenticate";
+import unAuthenticate from "./auth/unAuthenticate";
 
 Vue.use(Router);
 
-// create new router
+import AppView from './views/app/index.vue'
+import VerticalSidebar from './containers/layouts/verticalSidebar'
+import Schedule from './views/app/schedule/schedule.vue';
+import Users from './views/app/users/users.vue'
+import Appointments from './views/app/appointments/appointments.vue'
+import Insights from './views/app/insights/insights.vue'
+import signIn from './views/app/sessions/signIn'
+import signUp from './views/app/sessions/signUp.vue'
+import forgot from './views/app/sessions/forgot.vue'
+import ResetPassword from './views/app/sessions/ResetPassword.vue'
 
+
+// Extra components
+import UIKits from './views/app/ui-kits'
+import Alert from './views/app/ui-kits/alerts'
+import Popover from "./views/app/ui-kits/popover"
+import AppProducts from "./views/app/apps/products"
+// ./views/app/sessions/fotgot.vue
+
+// Create a Custom route
+
+function route(name, path, component, meta = {}, children = []) {
+  return { name, path, component, meta, children }
+}
+
+// create new router
 const routes = [
   {
     path: "/",
-    component: () => import("./views/app"), //webpackChunkName app
+    beforeEnter: unAuthenticate,
+  },
+  {
+    path: "/signIn",
+    name: "Authentication",
+    beforeEnter: unAuthenticate,
+    component: signIn,
+  },
+  {
+    path: "/signUp",
+    name: "Authentication",
+    beforeEnter: unAuthenticate,
+    component: signUp,
+  },
+  {
+    path: "/forgot",
+    name: "Authentication",
+    beforeEnter: unAuthenticate,
+    component: forgot,
+  },
+  {
+    path: "/reset-password",
+    name: "Authentication",
+    beforeEnter: unAuthenticate,
+    component: ResetPassword,
+  },
+  {
+    path: "/app",
+    name: "HomePageDashboard",
+    component: AppView,
     beforeEnter: authenticate,
-    redirect: "/app/patients",
+    redirect: "./app/appointments",
     children: [
       {
-        path: "/app/patients",
-        component: () => import("./views/app/patients/patients.vue")
+        path: "/app/appointments",
+        component: Appointments,
+      },
+      {
+        path: "/app/schedule",
+        component: Schedule,
       },
       {
         path: "/app/users",
-        component: () => import("./views/app/users/users.vue"), //users
+        component: Users,
       },
+      {
+        path: "/app/insights",
+        component: Insights,
+      },
+      {
+        path: "/app/overview",
+        component: () => import("./views/app/chart/echart")
+      },
+      {
+        path: "/app/settings",
+        component: () => import("./views/app/pages/profile")
+      },
+
       //ui-kits
       {
         path: "/app/ui-kits",
-        component: () => import("./views/app/ui-kits"),
+        component: UIKits,
+        // component: () => import("./views/app/ui-kits"),
         redirect: "/app/ui-kits/alerts",
         children: [
-          {
-            path: "alerts",
-            name: "alerts",
-            component: () => import("./views/app/ui-kits/alerts")
-          },
+          route('alerts', 'alerts', Alert),
           {
             path: "accordion",
             name: "accordion",
@@ -65,11 +132,13 @@ const routes = [
             name: "list",
             component: () => import("./views/app/ui-kits/list")
           },
-          {
-            path: "popover",
-            name: "popover",
-            component: () => import("./views/app/ui-kits/popover")
-          },
+          route('popover', 'popover', Popover),
+
+          // {
+          //   path: "popover",
+          //   name: "popover",
+          //   component: () => import("./views/app/ui-kits/popover")
+          // },
           {
             path: "progressbar",
             name: "progressbar",
@@ -230,11 +299,7 @@ const routes = [
             name: "edit-invoice",
             component: () => import("./views/app/apps/editInvoice")
           },
-          {
-            path: "products",
-            name: "products",
-            component: () => import("./views/app/apps/products")
-          },
+          route('products', 'products', AppProducts),
           {
             path: "product-detail",
             name: "product-detail",
@@ -271,7 +336,6 @@ const routes = [
             component: () => import("./views/app/apps/table")
           },
           {
-            path: "vue-table",
             path: "vue-table",
             component: () => import("./views/app/apps/vue-tables")
           },
@@ -364,8 +428,8 @@ const routes = [
             component: () => import("./views/app/datatables/filter")
           },
           {
-            path: "list",
-            name: "list",
+            path: "lists",
+            name: "lists",
             component: () => import("./views/app/datatables/list")
           },
           {
@@ -499,30 +563,19 @@ const routes = [
     ]
   },
   // sessions
-  {
-    path: "/app/sessions",
-    component: () => import("./views/app/sessions"),
-    redirect: "/app/sessions/signIn",
-    children: [
-      {
-        path: "signIn",
-        component: () => import("./views/app/sessions/signIn")
-      },
-      {
-        path: "signUp",
-        component: () => import("./views/app/sessions/signUp")
-      },
-      {
-        path: "forgot",
-        component: () => import("./views/app/sessions/forgot")
-      }
-    ]
-  },
-
-  {
-    path: "/vertical-sidebar",
-    component: () => import("./containers/layouts/verticalSidebar")
-  },
+  // {
+  //   path: "/app/sessions",
+  //   name: "SessionIndex",
+  //   component: SessionIndex,
+  //   redirect: "/app/sessions/signIn",
+  //   children: [
+  //     route('signIn', 'signIn', signIn),
+  //     route('signUp', 'signUp', signUp),
+  //     route('forgot', 'forgot', forgot),
+  //     route('reset-password', 'reset-password', ResetPassword)
+  //   ]
+  // },
+  route("vertical-sidebar", 'vertical-sidebar', VerticalSidebar),
   {
     path: "*",
     component: () => import("./views/app/pages/notFound")
@@ -538,27 +591,14 @@ const router = new Router({
   }
 });
 
-router.beforeEach((to, from, next) => {
-  // If this isn't an initial page load.
-  if (to.path) {
-    // Start the route progress bar.
-
-    NProgress.start();
-    NProgress.set(0.1);
-  }
-  next();
-});
-
 router.afterEach(() => {
   // Remove initial loading
+  // Complete the animation of the route progress bar.
+  // if (isMobile) {
   const preLoading = document.getElementById("page-loader");
   if (preLoading) {
     preLoading.classList.add('hide')
   }
-  // Complete the animation of the route progress bar.
-  setTimeout(() => NProgress.done(), 500);
-  // NProgress.done();
-  // if (isMobile) {
   if (window.innerWidth <= 1200) {
     // console.log("mobile");
     store.dispatch("changeSidebarProperties");

@@ -154,7 +154,7 @@ export default {
         };
         localStorage.setItem("userInfo", JSON.stringify(userInfo)); // store the token in localstorage
         setTimeout(() => {
-          this.$router.push("/app/patients");
+          this.$router.push("/app/appointments");
           this.makeToast("success", "Sign in successfully!");
         }, 1000);
       } else {

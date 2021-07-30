@@ -58,7 +58,7 @@
             subtitle
             @on-complete="onComplete"
             shape="circle"
-            color="#A855F7"
+            color="#6cdcd4"
           >
             <tab-content title="Basic Info" icon="i-Information">
               <b-form>

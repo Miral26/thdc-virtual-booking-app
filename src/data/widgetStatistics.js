@@ -300,7 +300,7 @@ export const splineAreaWidgetFive = {
         format: "dd/MM/yy HH:mm",
       },
     },
-    colors: ["#A855F7", "#e97d23"],
+    colors: ["#6cdcd4", "#e97d23"],
     stroke: {
       curve: "straight",
       width: 1,
@@ -624,7 +624,7 @@ export const widgetBarChartThree = {
         width: 1,
       },
     },
-    colors: ["#A855F7"],
+    colors: ["#6cdcd4"],
   },
 };
 

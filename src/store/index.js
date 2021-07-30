@@ -10,6 +10,7 @@ import cart from "./modules/cart";
 import verticalSidebar from "./modules/verticalSidebar";
 import scrumboard from "./modules/scrumboard";
 import loader from "./modules/loader";
+import patient from "./modules/patient";
 
 // Load Vuex
 Vue.use(Vuex);
@@ -26,6 +27,7 @@ export default new Vuex.Store({
     cart,
     verticalSidebar,
     scrumboard,
-    loader
+    loader,
+    patient
   }
 });

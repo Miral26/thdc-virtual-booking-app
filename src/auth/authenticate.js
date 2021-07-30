@@ -6,6 +6,6 @@ export default (to, from, next) => {
     next();
   } else {
     localStorage.removeItem("userInfo");
-    next("/app/sessions/signIn");
+    next("/signIn");
   }
 };

@@ -334,7 +334,7 @@ export const echart3 = {
       type: "line",
       showSymbol: true,
       smooth: true,
-      color: "#A855F7",
+      color: "#6cdcd4",
       lineStyle: {
         color: "rgba(102, 51, 153, 0.8)",
         opacity: 1,

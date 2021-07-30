@@ -216,15 +216,15 @@ export default {
           border: 1px solid none;
         }
         &:hover {
-          color: #a855f7;
+          color: #6cdcd4;
           .vnb__menu-options__option__arrow {
-            fill: #a855f7;
+            fill: #6cdcd4;
           }
         }
 
         &__icon {
           svg {
-            fill: #a855f7 !important;
+            fill: #6cdcd4 !important;
           }
         }
       }
@@ -240,8 +240,8 @@ export default {
         }
         color: #000 !important;
         &:hover {
-          color: #a855f7 !important;
-          border-left: 2px solid #a855f7;
+          color: #6cdcd4 !important;
+          border-left: 2px solid #6cdcd4;
         }
       }
     }
