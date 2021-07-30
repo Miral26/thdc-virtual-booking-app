@@ -181,16 +181,8 @@
                               v-b-modal.contact-list-table-modal-2
                               @click="editContactlist(props.row)"
                             >
-                              <i
-                                class="
-                                  nav-icon
-                                  i-Pen-2
-                                  text-success
-                                  font-weight-bold
-                                  mr-2
-                                "
-                              ></i>
-                              Edit
+                              
+                              
                             </b-dropdown-item>
 
                             <b-dropdown-item
@@ -479,3 +471,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+.gradient-purple-indigo {
+  /* background-color: #a855f7; */
+  background-image: -o-linear-gradient(-154deg, #a855f7 0%, #33214b 100%);
+  background: linear-gradient(104deg, #00ced7 0%, #33214b 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
+}
+</style>
