@@ -36,7 +36,7 @@ function route(name, path, component, meta = {}, children = []) {
 const routes = [
   {
     path: "/",
-    beforeEnter: unAuthenticate,
+    beforeEnter: authenticate,
   },
   {
     path: "/signIn",
