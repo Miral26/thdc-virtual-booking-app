@@ -24,6 +24,7 @@ import UIKits from './views/app/ui-kits'
 import Alert from './views/app/ui-kits/alerts'
 import Popover from "./views/app/ui-kits/popover"
 import AppProducts from "./views/app/apps/products"
+import home from "./auth/home";
 // ./views/app/sessions/fotgot.vue
 
 // Create a Custom route
@@ -36,7 +37,7 @@ function route(name, path, component, meta = {}, children = []) {
 const routes = [
   {
     path: "/",
-    beforeEnter: authenticate,
+    beforeEnter: home,
   },
   {
     path: "/signIn",
