@@ -27,6 +27,7 @@ import appFooter from "../common/footer";
 import { mapGetters } from "vuex";
 
 export default {
+  name:"VerticalSidebar",
   components: {
     verticalSidebar,
     verticalTopbar,

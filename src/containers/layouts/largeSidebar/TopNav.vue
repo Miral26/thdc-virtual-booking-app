@@ -236,7 +236,6 @@ export default {
       "changeSidebarProperties",
       "changeThemeMode",
       "signOut",
-      "setAppointmentData",
       "setPatientData",
       "setActiveTabInPatientForm",
     ]),
@@ -288,14 +287,7 @@ export default {
     resetSearchText() {
       this.searchPatientText = "";
     },
-    openAppointmentModal() {
-      this.setAppointmentData({
-        headerSearch: "",
-        selectedTime: moment().format("HH:MM:ss"),
-        selectedDate: new Date(),
-      });
-      this.$bvModal.show("new-appointment");
-    },
+    openAppointmentModal() {},
     openNewPatientModal() {
       this.setPatientData({
         first_name: "",

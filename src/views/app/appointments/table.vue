@@ -57,13 +57,22 @@
                 title="Delete"
               >
                 <i
-                  class="i-Close-Window text-25 text-danger"
+                  class="i-Close-Window text-25 text-danger mr-2"
                   @click="
                     confirmationPopup().then((result) => {
                       if (result.value) removeCard(props.row);
                     })
                   "
                 ></i>
+              </a>
+              <a v-b-tooltip.hover class="o-hidden d-inline-block c-pointer">
+                <b-button
+                  size="sm"
+                  variant="button"
+                  class="btn-primary ml-auto"
+                  @click="$router.push('/app/video-call')"
+                  >Enter Video</b-button
+                >
               </a>
             </span>
           </template>

@@ -114,19 +114,6 @@
         </div>
       </b-col>
     </b-row>
-    <!-- <b-row>
-      <b-col md="12 mt-4">
-        <b-button
-          class="btn-radius"
-          variant="primary ripple m-1"
-          v-b-modal.new-appointment
-          ><i class="fa fa-plus mr-1"></i> New Appointment</b-button
-        >
-        <b-button class="btn-radius" variant="outline-primary ripple ml-2"
-          >Schedule template</b-button
-        >
-      </b-col>
-    </b-row> -->
   </div>
   <Loader v-else />
 </template>
@@ -836,7 +823,6 @@ export default {
   },
   methods: {
     ...mapActions([
-      "setAppointmentData",
       "setPatientData",
       "setActiveTabInPatientForm",
       "setLoading",
@@ -934,14 +920,7 @@ export default {
       // this.$root.$emit("bv::toggle::collapse", "sidebar-right");
     },
     onCellClick(e) {
-      this.setAppointmentData({
-        headerSearch: "",
-        selectedDate: e.startTime,
-        selectedTime: moment(new Date(e.startTime).getTime()).format(
-          "HH:MM:ss"
-        ),
-      });
-      this.$bvModal.show("new-appointment");
+      return;
     },
     onPopupOpen: (args) => {
       console.log(`args`, args);

@@ -1,6 +1,7 @@
 .layout-sidebar-vertical{
 .vertical-header {
     position: relative!important;
+    z-index: 1001;
 }
 .menu-toggle.vertical-toggle {
     display: none!important;
@@ -14,4 +15,6 @@ header.main-header.vertical-header.d-flex.justify-content-between {
     border-radius: 5px;
     height: 64px;
 }
+
+
 }

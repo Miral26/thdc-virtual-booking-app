@@ -17,7 +17,7 @@ import signIn from './views/app/sessions/signIn'
 import signUp from './views/app/sessions/signUp.vue'
 import forgot from './views/app/sessions/forgot.vue'
 import ResetPassword from './views/app/sessions/ResetPassword.vue'
-
+import VideoCall from './views/app/video-call/video-call.vue'
 
 // Extra components
 import UIKits from './views/app/ui-kits'
@@ -93,6 +93,10 @@ const routes = [
       {
         path: "/app/settings",
         component: () => import("./views/app/pages/profile")
+      },
+      {
+        path: "/app/video-call",
+        component: VideoCall,
       },
 
       //ui-kits

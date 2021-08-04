@@ -1,10 +1,9 @@
 <template>
   <div class="app-admin-wrap layout-sidebar-large clearfix">
-    <top-nav />
-
     <sidebar />
 
     <main>
+      <top-nav />
       <div
         :class="{ 'sidenav-open': getSideBarToggleProperties.isSideNavOpen }"
         class="main-content-wrap d-flex flex-column flex-grow-1 print-area"

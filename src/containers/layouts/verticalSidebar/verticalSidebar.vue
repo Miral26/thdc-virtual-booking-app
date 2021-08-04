@@ -138,13 +138,16 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               />
-              <span>{{loggedInUser && loggedInUser.full_name || 'Guest'}}</span>
+              <span>{{
+                (loggedInUser && loggedInUser.full_name) || "Guest"
+              }}</span>
               <i class="i-Arrow-Down"></i>
             </template>
 
             <div class="dropdown-menu-right" aria-labelledby="userDropdown">
               <div class="dropdown-header">
-                <i class="i-Lock-User mr-1"></i> {{loggedInUser && loggedInUser.full_name || 'Guest'}}
+                <i class="i-Lock-User mr-1"></i>
+                {{ (loggedInUser && loggedInUser.full_name) || "Guest" }}
               </div>
               <a class="dropdown-item">Change Password</a>
               <a class="dropdown-item" href="#" @click.prevent="logoutUser"
@@ -169,35 +172,11 @@ export default {
       selectedParentMenu: "",
       sideMenu: [
         {
-          title: "Schedule",
-          selectedParentMenu: "schedule",
-          icon: "i-Calendar-4",
-          redirectTo: "/app/schedule",
+          title: "Appointments",
+          selectedParentMenu: "appointments",
+          icon: "i-File-Horizontal-Text",
+          redirectTo: "/app/appointments",
         },
-        {
-          title: "Daily Huddle",
-          selectedParentMenu: "daily-huddle",
-          icon: "i-Home1",
-          redirectTo: "/app/daily-huddle",
-        },
-        {
-          title: "Report",
-          selectedParentMenu: "report",
-          icon: "i-File-TXT",
-          redirectTo: "/app/report",
-        },
-        {
-          title: "Billings",
-          selectedParentMenu: "billings",
-          icon: "i-Dollar-Sign-2",
-          redirectTo: "/app/billings",
-        },
-        // {
-        //   title: "Overview",
-        //   selectedParentMenu: "overview",
-        //   icon: "i-Bar-Chart",
-        //   redirectTo: "/app/overview",
-        // },
       ],
     };
   },

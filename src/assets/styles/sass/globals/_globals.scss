@@ -101,6 +101,40 @@ blockquote {
   margin-bottom: 2rem;
 }
 
+#sidebar-right {
+  width: 55%;
+}
+
+.patient-detail-sidebar .b-sidebar {
+  background-color: #fff !important;
+}
+.sidebar-open:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.2;
+  z-index: 0;
+}
+.patient-detail-sidebar .b-sidebar-header {
+  color: #05070b;
+}
+.patient-detail-sidebar .b-sidebar-header .close {
+  margin-right: 10px !important;
+}
+.patient-detail-sidebar .b-sidebar-header .close svg {
+  border-radius: 100%;
+  border: 2px solid #d6d6d6;
+  color: #d6d6d6 !important;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  vertical-align: top;
+}
+
 @for $i from 1 through 5 {
   .line-height-#{$i} {
     line-height: #{$i};
@@ -189,40 +223,6 @@ blockquote {
 
 .c-pointer {
   cursor: pointer;
-}
-
-#sidebar-right {
-  width: 55%;
-}
-
-.patient-detail-sidebar .b-sidebar {
-  background-color: #fff !important;
-}
-.sidebar-open:before {
-  content: "";
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #000;
-  opacity: 0.2;
-  z-index: 0;
-}
-.patient-detail-sidebar .b-sidebar-header {
-  color: #05070b;
-}
-.patient-detail-sidebar .b-sidebar-header .close {
-  margin-right: 10px !important;
-}
-.patient-detail-sidebar .b-sidebar-header .close svg {
-  border-radius: 100%;
-  border: 2px solid #d6d6d6;
-  color: #d6d6d6 !important;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-  vertical-align: top;
 }
 
 // np progress bar

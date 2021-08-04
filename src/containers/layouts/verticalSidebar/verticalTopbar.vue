@@ -72,18 +72,6 @@
         <div class="d-flex">
           <i
             class="
-              i-File-Clipboard-File--Text
-              cursor-pointer
-              header-icon
-              d-none d-sm-inline-block
-              font-weight-bold
-            "
-            @click="openAppointmentModal"
-            v-b-popover.hover.bottom="'Add Appointment'"
-          >
-          </i>
-          <i
-            class="
               i-Add-User
               cursor-pointer
               header-icon
@@ -238,38 +226,14 @@ export default {
         {
           id: 2,
           title: "Users",
-          icon: "i-Checked-User",
+          icon: "i-Administrator",
           route: "/app/users",
         },
         {
           id: 3,
-          title: "Locations",
-          icon: "i-Drop",
-          route: "/app/locations",
-        },
-        {
-          id: 4,
-          title: "Location Hours",
-          icon: "i-File-Clipboard-File--Text",
-          route: "/app/location-hours",
-        },
-        {
-          id: 5,
-          title: "Operatories",
-          icon: "i-Shop-4",
-          route: "/app/operatories",
-        },
-        {
-          id: 6,
-          title: "Delta Dental",
-          icon: "i-Ambulance",
-          route: "/app/delta-dental",
-        },
-        {
-          id: 7,
-          title: "Patients",
-          icon: "i-Checked-User",
-          route: "/app/patients",
+          title: "Insights",
+          icon: "i-Bar-Chart",
+          route: "/app/insights",
         },
       ],
       selectedDate: new Date(),
@@ -314,7 +278,6 @@ export default {
       "sidebarCompact",
       "removeSidebarCompact",
       "mobileSidebar",
-      "setAppointmentData",
       "setPatientData",
       "setActiveTabInPatientForm",
     ]),
@@ -338,14 +301,7 @@ export default {
     resetSearchText() {
       this.searchPatientText = "";
     },
-    openAppointmentModal() {
-      this.setAppointmentData({
-        headerSearch: "",
-        selectedTime: moment().format("HH:MM:ss"),
-        selectedDate: new Date(),
-      });
-      this.$bvModal.show("new-appointment");
-    },
+    openAppointmentModal() {},
     openNewPatientModal() {
       this.setPatientData({
         first_name: "",
